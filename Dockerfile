@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM node:23-alpine
 WORKDIR /app
 COPY . .
-RUN apt update -y && apt install nodejs -y
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 CMD curl -f http://localhost:8080/ || exit 1
 ENTRYPOINT node server.js
 EXPOSE 8080
