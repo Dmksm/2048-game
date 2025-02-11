@@ -1,0 +1,9 @@
+services:
+  2048-game:
+    build: .
+    ports:
+      - "8080:8080"
+  2048-game-2:
+    build: .
+    ports:
+      - "8081:8080"
